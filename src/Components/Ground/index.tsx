@@ -17,7 +17,7 @@ export default function Ground({speed}: GroundProps) {
     }));
 
     // Load and configure the texture
-    const texture = useTexture("src/assets/sand.jpg");
+    const texture = useTexture(`${import.meta.env.BASE_URL}/sand.jpg`);
     const textureRef = useRef(texture);
 
     // Configure texture
