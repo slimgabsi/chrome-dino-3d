@@ -4,6 +4,7 @@ import {useState, useEffect, useMemo} from "react";
 import {useFrame} from "@react-three/fiber";
 import {GAME_CONFIG} from "../../consts/gameConfig";
 import {useGLTF} from "@react-three/drei";
+import {TAGS} from "../../consts/tags.ts";
 
 interface ObstacleProps {
     initialPosition: number;
@@ -27,7 +28,7 @@ function Obstacle({initialPosition, onReachEnd, speed}: ObstacleProps) {
         type: "Kinematic", /*Kinematic bodies which aren't affected by forces but can have a velocity and move around*/
         allowSleep: false,
         userData: {
-            tag: "obstacle",
+            tag: TAGS.OBSTACLE,
         },
     }));
 

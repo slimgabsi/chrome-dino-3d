@@ -3,6 +3,7 @@ import {Mesh, Object3D} from "three";
 import {useEffect, useState} from "react";
 import {GAME_CONFIG} from "../../consts/gameConfig";
 import {useGLTF, useAnimations} from "@react-three/drei";
+import {TAGS} from "../../consts/tags.ts";
 
 interface PlayerProps {
     onGameOver: () => void;
@@ -24,7 +25,7 @@ export default function Player({onGameOver}: PlayerProps) {
         fixedRotation: true,
         allowSleep: false,
         userData: {
-            tag: 'player',
+            tag: TAGS.PLAYER,
         },
         onCollide: (e) => {
             if (e.body.userData?.tag === 'ground') {

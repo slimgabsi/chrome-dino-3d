@@ -3,6 +3,7 @@ import {RepeatWrapping} from "three";
 import {useFrame} from "@react-three/fiber";
 import {useRef} from "react";
 import {usePlane} from "@react-three/cannon";
+import {TAGS} from "../../consts/tags.ts";
 
 interface GroundProps {
     speed: number;
@@ -12,7 +13,7 @@ export default function Ground({speed}: GroundProps) {
     const [ref] = usePlane(() => ({
         rotation: [-Math.PI / 2, 0, 0],
         position: [0, 0, 0],
-        userData: {tag: 'ground'},
+        userData: {tag: TAGS.GROUND},
         type: "Static",/*Static bodies which can only be positioned in the world and aren't affected by forces nor velocity.*/
     }));
 
