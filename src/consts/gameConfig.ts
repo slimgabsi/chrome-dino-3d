@@ -17,4 +17,5 @@ export const GAME_CONFIG = {
     // Game settings
     MAX_SPEED: 15,
     SPEED_INCREMENT: 1.2,
+    SPEED_INCREMENT_INTERVAL: 10000,
 }

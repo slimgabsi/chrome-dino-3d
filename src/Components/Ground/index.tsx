@@ -29,7 +29,7 @@ export default function Ground({speed}: GroundProps) {
     useFrame((_, delta) => {
         if (textureRef.current) {
             // Slow down the texture movement with a 0.05 multiplier
-            textureRef.current.offset.y -= speed * delta * 0.05;
+            textureRef.current.offset.y -= speed * delta * 0.04;
         }
     });
 

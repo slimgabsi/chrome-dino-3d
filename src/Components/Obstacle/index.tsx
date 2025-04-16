@@ -41,12 +41,6 @@ function Obstacle({initialPosition, onReachEnd, speed}: ObstacleProps) {
         });
     }, [clonedScene]);
 
-    // Reset position when component mounts or initialPosition changes
-    useEffect(() => {
-        setPosition(initialPosition);
-
-    }, [initialPosition]);
-
 
     // The delta time shows the milliseconds between renders
 

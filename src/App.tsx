@@ -30,7 +30,7 @@ function App() {
                         return Math.min(newSpeed, GAME_CONFIG.MAX_SPEED); // Cap at MAX_SPEED
                     })
                 }
-            }, 10000);
+            }, GAME_CONFIG.SPEED_INCREMENT_INTERVAL);
         }
 
         return () => {
@@ -90,7 +90,6 @@ function App() {
                     />
                     <ambientLight intensity={0.5}/>
                     <OrbitControls/>
-
                 </Physics>
             </Canvas>
         </div>

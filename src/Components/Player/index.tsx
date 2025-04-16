@@ -64,7 +64,7 @@ export default function Player({onGameOver}: PlayerProps) {
     return (
         <group ref={ref}>
             <primitive
-                position={[0, -0.6, 0]}
+                position={[0, -0.65, 0]}
                 rotation={[0, Math.PI, 0]}
                 object={scene}
                 scale={1}
