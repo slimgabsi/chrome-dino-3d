@@ -22,7 +22,6 @@ function Obstacle({initialPosition, onReachEnd, speed}: ObstacleProps) {
 
     // Create a more stable physics body configuration with adjusted size
     const [ref, api] = useBox<Mesh>(() => ({
-        mass: 0, // Static body
         position: [0, 0.6, position],
         args: [0.6, 1.5, 0.6],
         type: "Kinematic", /*Kinematic bodies which aren't affected by forces but can have a velocity and move around*/

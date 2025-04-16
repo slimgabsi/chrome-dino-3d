@@ -9,7 +9,8 @@ interface PlayerProps {
 }
 
 export default function Player({onGameOver}: PlayerProps) {
-    const {scene, animations} = useGLTF(`${import.meta.env.BASE_URL}/chrome-dino-3d-animated/source/model.gltf`);    const {actions, names} = useAnimations(animations, scene);
+    const {scene, animations} = useGLTF(`${import.meta.env.BASE_URL}/chrome-dino-3d-animated/source/model.gltf`);
+    const {actions, names} = useAnimations(animations, scene);
     const [isJumping, setIsJumping] = useState(false);
 
 
@@ -24,7 +25,6 @@ export default function Player({onGameOver}: PlayerProps) {
         allowSleep: false,
         userData: {
             tag: 'player',
-            isPlayer: true
         },
         onCollide: (e) => {
             if (e.body.userData?.tag === 'ground') {

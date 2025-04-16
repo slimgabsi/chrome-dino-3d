@@ -26,7 +26,7 @@ function App() {
             speedInterval = setInterval(() => {
                 if (speed < GAME_CONFIG.MAX_SPEED) {
                     setSpeed(prev => {
-                        const newSpeed = prev * 1.2; // Increase speed by 20%
+                        const newSpeed = prev * GAME_CONFIG.SPEED_INCREMENT; // Increase speed by 20%
                         return Math.min(newSpeed, GAME_CONFIG.MAX_SPEED); // Cap at MAX_SPEED
                     })
                 }
