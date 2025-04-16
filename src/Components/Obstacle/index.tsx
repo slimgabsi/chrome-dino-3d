@@ -13,7 +13,7 @@ interface ObstacleProps {
 
 function Obstacle({initialPosition, onReachEnd, speed}: ObstacleProps) {
     const [position, setPosition] = useState(initialPosition);
-    const {scene} = useGLTF("/chrome-dinosaur-game-cactus/source/model.gltf");
+    const {scene} = useGLTF("src/assets/chrome-dinosaur-game-cactus/source/model.gltf");
 
     // Clone the scene for this instance
     const clonedScene = useMemo(() => {
