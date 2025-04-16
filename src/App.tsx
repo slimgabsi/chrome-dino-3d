@@ -1,6 +1,6 @@
 import {Canvas} from "@react-three/fiber";
 import {OrbitControls, Sky} from "@react-three/drei"
-import {Physics, Debug} from "@react-three/cannon";
+import {Physics} from "@react-three/cannon";
 import {useState, useEffect} from "react";
 import Ground from "./Components/Ground";
 import Player from "./Components/Player";
@@ -24,11 +24,12 @@ function App() {
 
             // Increase speed every 10 seconds, but cap at MAX_SPEED
             speedInterval = setInterval(() => {
-                if(speed < GAME_CONFIG.MAX_SPEED) {
-                setSpeed(prev => {
-                    const newSpeed = prev * 1.2; // Increase speed by 20%
-                    return Math.min(newSpeed, GAME_CONFIG.MAX_SPEED); // Cap at MAX_SPEED
-                })}
+                if (speed < GAME_CONFIG.MAX_SPEED) {
+                    setSpeed(prev => {
+                        const newSpeed = prev * 1.2; // Increase speed by 20%
+                        return Math.min(newSpeed, GAME_CONFIG.MAX_SPEED); // Cap at MAX_SPEED
+                    })
+                }
             }, 10000);
         }
 
@@ -40,7 +41,6 @@ function App() {
 
     const handleGameOver = () => {
         setIsGameOver(true);
-        console.log("Game Over!");
     };
 
     return (
@@ -71,26 +71,26 @@ function App() {
                 camera={{position: [-15, 10, 10], fov: 50}}
             >
                 <Physics allowSleep={false} gravity={[0, -9.81, 0]}>
-                    <Debug color="green" scale={1}>
-                        <Ground speed={speed}/>
-                        <Player onGameOver={handleGameOver}/>
-                        <ObstacleSpawner speed={speed}/>
-                    </Debug>
-              
-                <Sky/>
-                <directionalLight
-                    position={[10, 15, 10]}
-                    castShadow
-                    shadow-mapSize={[4096, 4096]}
-                    shadow-camera-far={100}
-                    shadow-camera-left={-50}
-                    shadow-camera-right={50}
-                    shadow-camera-top={50}
-                    shadow-camera-bottom={-50}
-                />
-                <ambientLight intensity={0.5}/>
-                <OrbitControls/>
-                
+                    {/* <Debug color="green" scale={1}>*/}
+                    <Ground speed={speed}/>
+                    <Player onGameOver={handleGameOver}/>
+                    <ObstacleSpawner speed={speed}/>
+                    {/*  </Debug>*/}
+
+                    <Sky/>
+                    <directionalLight
+                        position={[10, 15, 10]}
+                        castShadow
+                        shadow-mapSize={[4096, 4096]}
+                        shadow-camera-far={100}
+                        shadow-camera-left={-50}
+                        shadow-camera-right={50}
+                        shadow-camera-top={50}
+                        shadow-camera-bottom={-50}
+                    />
+                    <ambientLight intensity={0.5}/>
+                    <OrbitControls/>
+
                 </Physics>
             </Canvas>
         </div>

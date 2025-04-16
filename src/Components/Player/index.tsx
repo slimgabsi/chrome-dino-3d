@@ -28,11 +28,9 @@ export default function Player({onGameOver}: PlayerProps) {
         },
         onCollide: (e) => {
             if (e.body.userData?.tag === 'ground') {
-                console.log("Ground collision detected");
                 setIsJumping(false);
             }
             if (e.body.userData?.tag === 'obstacle') {
-                console.log("Obstacle collision detected");
                 onGameOver();
             }
         }
