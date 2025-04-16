@@ -1,6 +1,7 @@
 import {Canvas} from "@react-three/fiber";
-import {OrbitControls, Sky} from "@react-three/drei"
+import {OrbitControls, Sky, Stats} from "@react-three/drei"
 import {Physics} from "@react-three/cannon";
+import {Bloom, EffectComposer, Noise} from '@react-three/postprocessing'
 import {useState, useEffect} from "react";
 import Ground from "./Components/Ground";
 import Player from "./Components/Player";
@@ -66,10 +67,19 @@ function App() {
                     </div>
                 </div>
             )}
+
             <Canvas
                 shadows
                 camera={{position: [-15, 10, 10], fov: 50}}
             >
+                {/* FPS Counter */}
+                <Stats/>
+                {/* Effects */}
+                <EffectComposer>
+                    <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300}/>
+                    <Noise opacity={0.02}/>
+
+                </EffectComposer>
                 <Physics allowSleep={false} gravity={[0, -9.81, 0]}>
                     {/* <Debug color="green" scale={1}>*/}
                     <Ground speed={speed}/>
