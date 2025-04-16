@@ -28,7 +28,7 @@ export default function Ground({speed}: GroundProps) {
     // Animate the texture at a slower speed
     useFrame((_, delta) => {
         if (textureRef.current) {
-            // Slow down the texture movement with a 0.05 multiplier
+            // Slow down the texture movement with a 0.04 multiplier
             textureRef.current.offset.y -= speed * delta * 0.04;
         }
     });
