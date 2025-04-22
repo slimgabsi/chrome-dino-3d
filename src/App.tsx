@@ -75,10 +75,9 @@ function App() {
                 {/* FPS Counter */}
                 <Stats/>
                 {/* Effects */}
-                <EffectComposer>
-                    <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300}/>
+                <EffectComposer >
+                    <Bloom luminanceThreshold={2} luminanceSmoothing={2} height={500}/>
                     <Noise opacity={0.02}/>
-
                 </EffectComposer>
                 <Physics allowSleep={false} gravity={[0, -9.81, 0]}>
                     {/* <Debug color="green" scale={1}>*/}

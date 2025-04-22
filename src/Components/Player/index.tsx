@@ -28,10 +28,10 @@ export default function Player({onGameOver}: PlayerProps) {
             tag: TAGS.PLAYER,
         },
         onCollide: (e) => {
-            if (e.body.userData?.tag === 'ground') {
+            if (e.body.userData?.tag === TAGS.GROUND) {
                 setIsJumping(false);
             }
-            if (e.body.userData?.tag === 'obstacle') {
+            if (e.body.userData?.tag === TAGS.OBSTACLE) {
                 onGameOver();
             }
         }
