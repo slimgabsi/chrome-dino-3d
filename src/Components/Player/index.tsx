@@ -23,7 +23,6 @@ export default function Player({onGameOver}: PlayerProps) {
         linearDamping: 0.9,
         angularDamping: 0.9,
         fixedRotation: true,
-        allowSleep: false,
         userData: {
             tag: TAGS.PLAYER,
         },

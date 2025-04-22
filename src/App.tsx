@@ -79,7 +79,7 @@ function App() {
                     <Bloom luminanceThreshold={2} luminanceSmoothing={2} height={500}/>
                     <Noise opacity={0.02}/>
                 </EffectComposer>
-                <Physics allowSleep={false} gravity={[0, -9.81, 0]}>
+                <Physics gravity={[0, -9.81, 0]}>
                     {/* <Debug color="green" scale={1}>*/}
                     <Ground speed={speed}/>
                     <Player onGameOver={handleGameOver}/>

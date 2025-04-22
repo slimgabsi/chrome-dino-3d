@@ -26,7 +26,6 @@ function Obstacle({initialPosition, onReachEnd, speed}: ObstacleProps) {
         position: [0, 0.6, position],
         args: [0.6, 1.5, 0.6],
         type: "Kinematic", /*Kinematic bodies which aren't affected by forces but can have a velocity and move around*/
-        allowSleep: false,
         userData: {
             tag: TAGS.OBSTACLE,
         },
