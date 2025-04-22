@@ -79,26 +79,25 @@ function App() {
                     <Bloom luminanceThreshold={2} luminanceSmoothing={2} height={500}/>
                     <Noise opacity={0.02}/>
                 </EffectComposer>
+                <Sky/>
+                <directionalLight
+                    position={[10, 15, 10]}
+                    castShadow
+                    shadow-mapSize={[4096, 4096]}
+                    shadow-camera-far={100}
+                    shadow-camera-left={-50}
+                    shadow-camera-right={50}
+                    shadow-camera-top={50}
+                    shadow-camera-bottom={-50}
+                />
+                <ambientLight intensity={0.5}/>
+                <OrbitControls/>
                 <Physics gravity={[0, -9.81, 0]}>
                     {/* <Debug color="green" scale={1}>*/}
                     <Ground speed={speed}/>
                     <Player onGameOver={handleGameOver}/>
                     <ObstacleSpawner speed={speed}/>
                     {/*  </Debug>*/}
-
-                    <Sky/>
-                    <directionalLight
-                        position={[10, 15, 10]}
-                        castShadow
-                        shadow-mapSize={[4096, 4096]}
-                        shadow-camera-far={100}
-                        shadow-camera-left={-50}
-                        shadow-camera-right={50}
-                        shadow-camera-top={50}
-                        shadow-camera-bottom={-50}
-                    />
-                    <ambientLight intensity={0.5}/>
-                    <OrbitControls/>
                 </Physics>
             </Canvas>
         </div>
